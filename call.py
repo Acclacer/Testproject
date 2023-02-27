@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import pika
 import traceback
-
+import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from mysql_connecter import mysql_connecter
 from datetime import date, timedelta
@@ -19,6 +19,7 @@ mysql_config = {
         'host': '10.142.157.2',
         'port': 3306
     }
+
 yesterday = str((date.today() + timedelta(days=-1)).strftime("%Y-%m-%d"))
 db_util = mysql_connecter(db_cfg=mysql_config)
 db_util.set_transaction_isolation_read_committed()
